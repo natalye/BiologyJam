@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea85bb13e717d5641a1fe1cec26535d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BacteriaPrefab: {fileID: 197810, guid: 72efb7da2a9c10a4d9299ebc0f4b8f7d, type: 2}
 --- !u!4 &697764592
 Transform:
   m_ObjectHideFlags: 0
@@ -359,3 +360,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf0f52a29527bc4fb1811cc160d68b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phagocytePrefab: {fileID: 0}
