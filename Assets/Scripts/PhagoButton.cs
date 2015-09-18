@@ -15,7 +15,7 @@ public class PhagoButton : MonoBehaviour {
 	
 	}
 
-	void OnClick() {
+	void OnMouseUp() {
 		GameObject newPhagocyte;
 		Vector2 position = new Vector2(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y);
 		newPhagocyte = Instantiate(phagocytePrefab, position, Quaternion.identity) as GameObject;
