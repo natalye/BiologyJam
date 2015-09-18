@@ -307,7 +307,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 71bdda17f2014644d908914e1ad50465, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1630814630
@@ -360,4 +360,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf0f52a29527bc4fb1811cc160d68b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phagocytePrefab: {fileID: 0}
+  phagocytePrefab: {fileID: 131244, guid: cbc5dd68079ac9645ad575857fae3cf5, type: 2}
