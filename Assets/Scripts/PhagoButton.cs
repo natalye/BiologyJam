@@ -4,6 +4,7 @@ using System.Collections;
 public class PhagoButton : MonoBehaviour {
 
 	public GameObject phagocytePrefab;
+	int countPhago = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -17,8 +18,9 @@ public class PhagoButton : MonoBehaviour {
 
 	void OnMouseUp() {
 		GameObject newPhagocyte;
-		Vector2 position = new Vector2(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y);
+		Vector2 position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
 		newPhagocyte = Instantiate(phagocytePrefab, position, Quaternion.identity) as GameObject;
+		newPhagocyte.name = "Phagocyte" + countPhago.ToString();
 	}
 
 }

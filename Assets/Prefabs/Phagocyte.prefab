@@ -9,6 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 445854}
   - 212: {fileID: 21276182}
+  - 50: {fileID: 5059040}
+  - 60: {fileID: 6049480}
+  - 114: {fileID: 11418192}
   m_Layer: 0
   m_Name: Phagocyte
   m_TagString: Untagged
@@ -28,6 +31,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5059040
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131244}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!60 &6049480
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131244}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 24, y: 19}
+      - {x: 22, y: 27}
+      - {x: 16, y: 31}
+      - {x: 1, y: 35}
+      - {x: -14, y: 35}
+      - {x: -35, y: 20}
+      - {x: -42, y: 8}
+      - {x: -42, y: -13}
+      - {x: -15, y: -28}
+      - {x: 1, y: -28}
+      - {x: 27, y: -24}
+      - {x: 31, y: -15}
+      - {x: 31, y: -7}
+      - {x: 13, y: 2}
+--- !u!114 &11418192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eed11519529fad418b57832d22c8109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21276182
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -51,7 +108,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 9ccf38b455adc7549a7a4313fe6adb32, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
@@ -66,6 +123,14 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 9ccf38b455adc7549a7a4313fe6adb32,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 131244}

@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 418850}
   - 212: {fileID: 21263540}
   - 114: {fileID: 11422436}
+  - 60: {fileID: 6044952}
   m_Layer: 0
   m_Name: ReproductionArea
   m_TagString: Untagged
@@ -29,6 +30,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!60 &6044952
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156922}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 24, y: 19}
+      - {x: 22, y: 27}
+      - {x: 16, y: 31}
+      - {x: 1, y: 35}
+      - {x: -14, y: 35}
+      - {x: -35, y: 20}
+      - {x: -42, y: 8}
+      - {x: -42, y: -13}
+      - {x: -15, y: -28}
+      - {x: 1, y: -28}
+      - {x: 27, y: -24}
+      - {x: 31, y: -15}
+      - {x: 31, y: -7}
+      - {x: 13, y: 2}
 --- !u!114 &11422436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -63,7 +91,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9ccf38b455adc7549a7a4313fe6adb32, type: 3}
   m_Color: {r: .2453347, g: 0, b: .602941155, a: 1}
 --- !u!1001 &100100000
@@ -89,6 +117,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Color.b
       value: .602941155
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
