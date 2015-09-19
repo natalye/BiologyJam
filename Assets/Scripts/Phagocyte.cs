@@ -42,15 +42,9 @@ public class Phagocyte : MonoBehaviour {
 		hp = 100;
 		speed = 200;
 	}
+	
 
-
-	void OnCollisionStay2D (Collision2D col) {
-
-
-
-	}
-
-	void OnCollisionEnter2D (Collision2D col) {
+	void OnTriggerEnter2D (Collider2D col) {
 		Debug.Log("Collision!");
 		if (inLane) {
 			if (col.gameObject.name == "TopWall") {
