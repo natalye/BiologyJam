@@ -44,7 +44,6 @@ public class Phagocyte : MonoBehaviour {
 				}
 			}
 
-
 			if (col.gameObject.name == "UpperWall" || col.gameObject.name == "BottomWall" || col.gameObject.name == "RightWall" || col.gameObject.name == "LeftWall") {
 				if (inLane) {
 					moveDirection = new Vector2 ((-moveDirection.x), (-moveDirection.y));
@@ -53,6 +52,16 @@ public class Phagocyte : MonoBehaviour {
 					ChooseRandomDirection ();
 				}
 			}
+
+		if (col.gameObject.name == "UpperWall" || col.gameObject.name == "BottomWall" || col.gameObject.name == "RightWall" || col.gameObject.name == "LeftWall") {
+			if (inLane) {
+				Debug.Log("hit");
+				StartCoroutine(WallHit());
+			} else {
+				inLane = true;
+				ChooseRandomDirection ();
+			}
+		}
 
 			/*if (col.gameObject.name == "Walls") {
 			Debug.Log ("colide");
@@ -66,8 +75,17 @@ public class Phagocyte : MonoBehaviour {
 		}*/
 		}
 	}
+
+	IEnumerator WallHit(){
+		CancelInvoke ("ChooseRandomDirection");
+		moveDirection = new Vector2 ((-moveDirection.x), (-moveDirection.y));
+		yield return new WaitForSeconds (1);
+		ChooseRandomDirection ();
+	}
+		
 	private void ChooseRandomDirection()
 	{
+		Debug.Log ("random");
 		moveDirection = Random.insideUnitCircle;
 		moveDirection.Normalize ();
 		Invoke("ChooseRandomDirection",0.75f);
