@@ -9,7 +9,7 @@ public class StartGame : MonoBehaviour {
 	void Start () {
 		GameObject FirstBacteria;
 		//Vector2 position = new Vector2 (900, 0);
-		Vector2 position = new Vector2 (-250, 100);
+		Vector2 position = new Vector2 (-450, 100);
 		FirstBacteria = Instantiate (BacteriaPrefab, position, Quaternion.identity) as GameObject;
 		FirstBacteria.name = "Bacteria";
 	}

@@ -124,7 +124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433332, guid: 76a8782c4be6bc244a71a300c3ba0054, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 470262, guid: 76a8782c4be6bc244a71a300c3ba0054, type: 2}
       propertyPath: m_LocalScale.x
@@ -133,6 +133,10 @@ Prefab:
     - target: {fileID: 400978, guid: 76a8782c4be6bc244a71a300c3ba0054, type: 2}
       propertyPath: m_LocalScale.x
       value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 123882, guid: 76a8782c4be6bc244a71a300c3ba0054, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 76a8782c4be6bc244a71a300c3ba0054, type: 2}
@@ -220,7 +224,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &697764590
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +264,27 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
+--- !u!1 &1204487747 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 156922, guid: a4230c86e4403d243ad6e94577ac0d3d, type: 2}
+  m_PrefabInternal: {fileID: 1979670755}
+--- !u!50 &1204487748
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1204487747}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1297592407 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 124404, guid: 76a8782c4be6bc244a71a300c3ba0054, type: 2}
@@ -431,7 +455,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!60 &1630814631
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -510,6 +534,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 156922, guid: a4230c86e4403d243ad6e94577ac0d3d, type: 2}
+      propertyPath: m_TagString
+      value: New Tag
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862816, guid: a4230c86e4403d243ad6e94577ac0d3d, type: 2}
+      propertyPath: m_Radius
+      value: 100
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: a4230c86e4403d243ad6e94577ac0d3d, type: 2}
   m_IsPrefabParent: 0

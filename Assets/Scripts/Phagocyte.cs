@@ -23,14 +23,17 @@ public class Phagocyte : MonoBehaviour {
 
 
 	void OnCollisionEnter2D (Collision2D col) {
+		Debug.Log ("colide");
 		if (!chosenTarget) {
+			Debug.Log ("colide2");
 			if (col.gameObject.name == "ToxicRadius") {
+				Debug.Log (" pre detected bacteria");
 				chosenTarget = true;
 				Debug.Log ("detected bacteria");
 				target = col.gameObject;
 			}
 		} else {
-			if (col.gameObject.name == "Bacteria") {
+			if (col.gameObject.tag == "Bacteria") {
 				chosenTarget = false;
 				Debug.Log ("devoured bacteria");
 				hp -= 10;
@@ -44,21 +47,25 @@ public class Phagocyte : MonoBehaviour {
 				}
 			}
 		}
-			Debug.Log ("preif");
-			if (col.gameObject.name == "UpperWall" || col.gameObject.name == "BottomWall" || col.gameObject.name == "RightWall" || col.gameObject.name == "LeftWall") {
-				Debug.Log ("prehit");
-				if (inLane) {
-					Debug.Log ("hit");
-					StartCoroutine (WallHit ());
-				} else {
-					inLane = true;
-					moveDirection = Random.insideUnitCircle;
-					moveDirection.x = Mathf.Abs (moveDirection.x);
-					moveDirection.Normalize ();
-				}
-			}
+		Debug.Log ("preif");
+		if (col.gameObject.name == "UpperWall" || col.gameObject.name == "BottomWall" || col.gameObject.name == "RightWall" || col.gameObject.name == "LeftWall") {
+			Debug.Log ("prehit");
+			if (inLane) {
+				Debug.Log ("hit");
+				//moveDirection = new Vector2 ((-moveDirection.x), (-moveDirection.y));
+				StartCoroutine (WallHit ());
 
-			/*if (col.gameObject.name == "Walls") {
+			}
+			else
+			{
+				inLane = true;
+				moveDirection = Random.insideUnitCircle;
+				moveDirection.x = Mathf.Abs (moveDirection.x);
+				moveDirection.Normalize ();
+			}
+		}
+
+		/*if (col.gameObject.name == "Walls") {
 			Debug.Log ("colide");
 			if (inLane == true) {
 
@@ -76,6 +83,7 @@ public class Phagocyte : MonoBehaviour {
 		moveDirection = new Vector2 ((-moveDirection.x), (-moveDirection.y));
 		yield return new WaitForSeconds (1);
 		ChooseRandomDirection ();
+		StopCoroutine("WallHit()");
 	}
 		
 	private void ChooseRandomDirection()
@@ -89,7 +97,7 @@ public class Phagocyte : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (target) {
-			CancelInvoke();
+			//CancelInvoke();
 			moveDirection = new Vector2 (target.transform.position.x - gameObject.transform.position.x, target.transform.position.y - gameObject.transform.position.y);
 			moveDirection.Normalize ();
 		} else {
