@@ -31,6 +31,24 @@ public class Bacteria : MonoBehaviour {
 		}
 	}
 
+
+	void OnCollisionEnter2D (Collision2D col) {
+		if (col.gameObject.tag == "ReproductionArea") {
+			breedingspeed=2.5f;
+			InRPArea=true;
+			TargetRPArea=col.gameObject;
+		}
+	}
+	
+	void OnCollisionExit2D (Collision2D col) {
+		if (col.gameObject.tag == "ReproductionArea") {
+			breedingspeed=1;
+			InRPArea=false;
+			TargetRPArea=null;
+		}
+	}
+
+
 	void OnTriggerStay2D (Collider2D col) {
 		if (col.gameObject.tag == "ReproductionArea") {
 			breedingspeed=2.5f;
@@ -47,7 +65,7 @@ public class Bacteria : MonoBehaviour {
 		}
 	}
 
-	private void Reproduction(){
+	private void Reproduction() {
 		GameObject NewBacteria;
 		//Vector2 position = new Vector2 (900, 0);
 		Vector2 position = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y);

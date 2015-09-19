@@ -49,16 +49,17 @@ public class Phagocyte : MonoBehaviour {
 			if (col.gameObject.name == "ToxicRadius") {
 				Debug.Log("Detected Bacteria Close By...");
 				chosenTarget = true;
+				col.gameObject.SetActive(false);
 				target = col.gameObject;
 			}
 		}
 		else {
 			if (col.gameObject.tag == "Bacteria") {
 				chosenTarget = false;
+				target = null;
 				Debug.Log("Devoured Bacteria!!!");
 				hp -= 10;
 				Debug.Log ("Eating is hard.. Lost 10 HP. Curent HP = " + hp);
-				target = null;
 				col.gameObject.SetActive(false);
 				randomDirectionChosen = false;
 				if (hp <= 0) {
@@ -147,7 +148,7 @@ public class Phagocyte : MonoBehaviour {
 				ChooseRandomDirection();
 			}
 
-			if (target) {
+			if (chosenTarget) {
 				Debug.Log("have target, moving to it");
 				// move towards target bacteria
 				moveDirection = new Vector2 (target.transform.position.x - gameObject.transform.position.x, target.transform.position.y - gameObject.transform.position.y);
