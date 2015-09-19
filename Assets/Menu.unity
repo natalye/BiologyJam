@@ -513,7 +513,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -570,7 +569,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b669cd553230fed4d9bff580cc4c6386, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .100000001
+  m_Volume: .5
   m_Pitch: 1
   Loop: 1
   Mute: 0
