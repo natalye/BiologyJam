@@ -68,7 +68,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168656}
-  m_Mass: .25
+  m_Mass: .100000001
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cb5bb6242062441a417e3ec9aec1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BacteriaPrefab: {fileID: 0}
-  breedingspeed: 0
+  BacteriaPrefab: {fileID: 168656}
+  breedingspeed: 1
   InRPArea: 0
   TargetRPArea: {fileID: 0}
 --- !u!212 &21200030
@@ -199,7 +199,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Mass
-      value: .25
+      value: .100000001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: BacteriaPrefab
