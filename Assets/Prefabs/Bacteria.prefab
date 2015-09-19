@@ -144,8 +144,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cb5bb6242062441a417e3ec9aec1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BacteriaPrefab: {fileID: 168656}
-  breedingspeed: 1
+  BacteriaPrefab: {fileID: 0}
+  breedingspeed: 0
+  InRPArea: 0
+  TargetRPArea: {fileID: 0}
 --- !u!212 &21200030
 SpriteRenderer:
   m_ObjectHideFlags: 1
