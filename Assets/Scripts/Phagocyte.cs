@@ -43,27 +43,20 @@ public class Phagocyte : MonoBehaviour {
 					Debug.Log ("phagocyte's dead");
 				}
 			}
-
+		}
+			Debug.Log ("preif");
 			if (col.gameObject.name == "UpperWall" || col.gameObject.name == "BottomWall" || col.gameObject.name == "RightWall" || col.gameObject.name == "LeftWall") {
+				Debug.Log ("prehit");
 				if (inLane) {
-					moveDirection = new Vector2 ((-moveDirection.x), (-moveDirection.y));
+					Debug.Log ("hit");
+					StartCoroutine (WallHit ());
 				} else {
 					inLane = true;
-					ChooseRandomDirection ();
+					moveDirection = Random.insideUnitCircle;
+					moveDirection.x = Mathf.Abs (moveDirection.x);
+					moveDirection.Normalize ();
 				}
 			}
-
-		if (col.gameObject.name == "UpperWall" || col.gameObject.name == "BottomWall" || col.gameObject.name == "RightWall" || col.gameObject.name == "LeftWall") {
-			if (inLane) {
-				Debug.Log("hit");
-				StartCoroutine(WallHit());
-			} else {
-				inLane = true;
-				moveDirection=Random.insideUnitCircle;
-				moveDirection.x=Mathf.Abs(moveDirection.x);
-				moveDirection.Normalize();
-			}
-		}
 
 			/*if (col.gameObject.name == "Walls") {
 			Debug.Log ("colide");
@@ -75,7 +68,7 @@ public class Phagocyte : MonoBehaviour {
 				Debug.Log ("in lane");
 			}
 		}*/
-		}
+		
 	}
 
 	IEnumerator WallHit(){
