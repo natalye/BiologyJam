@@ -31,7 +31,7 @@ GameObject:
   - 50: {fileID: 5023830}
   m_Layer: 0
   m_Name: Bacteria
-  m_TagString: Untagged
+  m_TagString: Bacteria
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +68,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168656}
-  m_Mass: 1
+  m_Mass: .25
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -76,7 +76,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 0
 --- !u!50 &5059614
 Rigidbody2D:
   serializedVersion: 2
@@ -84,7 +84,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 115616}
-  m_Mass: 1
+  m_Mass: 9.99999975e-05
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
@@ -144,6 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cb5bb6242062441a417e3ec9aec1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BacteriaPrefab: {fileID: 168656}
+  breedingspeed: 1
 --- !u!212 &21200030
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -179,11 +181,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_TagString
-      value: Untagged
+      value: Bacteria
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Constraints
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
@@ -192,6 +194,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: BacteriaPrefab
+      value: 
+      objectReference: {fileID: 168656}
+    - target: {fileID: 0}
+      propertyPath: breedingspeed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
