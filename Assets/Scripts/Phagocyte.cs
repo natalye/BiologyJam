@@ -59,35 +59,40 @@ public class Phagocyte : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D col) {
-
-		if (col.gameObject.name == "Walls") {
-			if (inLane) {
-				Debug.Log("collided with wall");
-				if (col.transform.position.x >= lanes[targetLane].startX + 50 && col.transform.position.x <= lanes[targetLane].startX + 70) {
-					Debug.Log ("left wall");
-					// left wall
-					moveDirection = new Vector2(-moveDirection.x, moveDirection.y);
-				}
-				else if (col.transform.position.x >= lanes[targetLane].endX - 50 && col.transform.position.x <= lanes[targetLane].endX - 70) {
-					Debug.Log ("right wall");
-					// right wall
-					moveDirection = new Vector2(-moveDirection.x, moveDirection.y);
-				}
-				//moveDirection = new Vector2(-moveDirection.x, moveDirection.y);
-			} else {
-				// pass through walls until reach target lane
+		Debug.Log ("Collision!");
+		if (inLane) {
+			if (col.gameObject.name == "TopWall") {
+				Debug.Log("Collision: Top Wall");
+				moveDirection = new Vector2(moveDirection.x, -moveDirection.y);
 			}
+			else if (col.gameObject.name == "BottomWall") {
+				Debug.Log("Collision: Bottom Wall");
+				moveDirection = new Vector2(moveDirection.x, -moveDirection.y);
+			}
+			else if (col.gameObject.name == "LeftWall") {
+				Debug.Log("Collision: Left Wall");
+				moveDirection = new Vector2(-moveDirection.x, moveDirection.y);
+			}
+			else if (col.gameObject.name == "RightWall") {
+				Debug.Log("Collision: Right Wall");
+				moveDirection = new Vector2(-moveDirection.x, moveDirection.y);
+			}
+		}
+		else {
+			// pass through walls until reach target lane
 		}
 
 		/*
 		if (!chosenTarget) {
+			Debug.Log ("colide2");
 			if (col.gameObject.name == "ToxicRadius") {
+				Debug.Log (" pre detected bacteria");
 				chosenTarget = true;
 				Debug.Log ("detected bacteria");
 				target = col.gameObject;
 			}
 		} else {
-			if (col.gameObject.name == "Bacteria") {
+			if (col.gameObject.tag == "Bacteria") {
 				chosenTarget = false;
 				Debug.Log ("devoured bacteria");
 				hp -= 10;
@@ -95,10 +100,63 @@ public class Phagocyte : MonoBehaviour {
 				target = null;
 				col.gameObject.SetActive (false);
 				//ChooseRandomDirection ();
+				if (hp <= 0) {
+					gameObject.SetActive (false);
+					Debug.Log ("phagocyte's dead");
 			}
 		}
 		*/
+		/*
+		if (col.gameObject.name == "UpperWall" || col.gameObject.name == "BottomWall" || col.gameObject.name == "RightWall" || col.gameObject.name == "LeftWall") {
+			Debug.Log ("prehit");
+			if (inLane) {
+				Debug.Log ("hit");
+				//moveDirection = new Vector2 ((-moveDirection.x), (-moveDirection.y));
+				StartCoroutine (WallHit ());
+
+			}
+			else
+			{
+				inLane = true;
+				moveDirection = Random.insideUnitCircle;
+				moveDirection.x = Mathf.Abs (moveDirection.x);
+				moveDirection.Normalize ();
+			}
+		}
+		*/
+
+		/*if (col.gameObject.name == "Walls") {
+			Debug.Log ("colide");
+			if (inLane == true) {
+
+			} else {
+				ChooseRandomDirection ();
+				inLane = true;
+				Debug.Log ("in lane");
+			}
+		}*/
+		
 	}
+
+	/*
+	IEnumerator WallHit(){
+		//CancelInvoke ("ChooseRandomDirection");
+		moveDirection = new Vector2 ((-moveDirection.x), (-moveDirection.y));
+		yield return new WaitForSeconds (1);
+		ChooseRandomDirection ();
+		StopCoroutine("WallHit()");
+	}
+	*/
+	
+	private void ChooseRandomDirection()
+	{
+		Debug.Log ("Choosing Random Direction...");
+		moveDirection = Random.insideUnitCircle;
+		moveDirection.x = Mathf.Abs(moveDirection.x);
+		moveDirection.Normalize();
+		//Invoke("ChooseRandomDirection",0.75f);
+	}
+
 
 	// Update is called once per frame
 	void Update () {
@@ -108,7 +166,7 @@ public class Phagocyte : MonoBehaviour {
 			if (gameObject.transform.position.x > lanes[targetLane].startX + 60) {
 				// in lane
 				inLane = true;
-				Debug.Log("entered lane");
+				Debug.Log("Entered Target Lane");
 			}
 
 			// move into the lane
