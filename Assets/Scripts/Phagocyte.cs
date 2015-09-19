@@ -48,7 +48,9 @@ public class Phagocyte : MonoBehaviour {
 				StartCoroutine(WallHit());
 			} else {
 				inLane = true;
-				ChooseRandomDirection ();
+				moveDirection=Random.insideUnitCircle;
+				moveDirection.x=Mathf.Abs(moveDirection.x);
+				moveDirection.Normalize();
 			}
 		}
 
@@ -65,7 +67,7 @@ public class Phagocyte : MonoBehaviour {
 	}
 
 	IEnumerator WallHit(){
-		CancelInvoke ("ChooseRandomDirection");
+		//CancelInvoke ("ChooseRandomDirection");
 		moveDirection = new Vector2 ((-moveDirection.x), (-moveDirection.y));
 		yield return new WaitForSeconds (1);
 		ChooseRandomDirection ();
@@ -76,7 +78,7 @@ public class Phagocyte : MonoBehaviour {
 		Debug.Log ("random");
 		moveDirection = Random.insideUnitCircle;
 		moveDirection.Normalize ();
-		Invoke("ChooseRandomDirection",0.75f);
+		//Invoke("ChooseRandomDirection",0.75f);
 	}
 
 	// Update is called once per frame
