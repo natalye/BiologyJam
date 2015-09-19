@@ -18,6 +18,8 @@ public class Phagocyte : MonoBehaviour {
 		public int botY;
 	}
 
+	int halfPhagocyteWidth = 35;
+
 	Dictionary<int, LaneBounds> lanes = new Dictionary<int, LaneBounds>();
 	int targetLane = 1;
 	bool randomDirectionChosen = false;
@@ -163,7 +165,7 @@ public class Phagocyte : MonoBehaviour {
 
 		if (!inLane) {
 
-			if (gameObject.transform.position.x > lanes[targetLane].startX + 60) {
+			if (gameObject.transform.position.x > lanes[targetLane].startX + halfPhagocyteWidth) {
 				// in lane
 				inLane = true;
 				Debug.Log("Entered Target Lane");
