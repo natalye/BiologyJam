@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7cb5bb6242062441a417e3ec9aec1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BacteriaPrefab: {fileID: 0}
-  breedingspeed: 0
+  BacteriaPrefab: {fileID: 168656}
+  breedingspeed: 1
   InRPArea: 0
   TargetRPArea: {fileID: 0}
 --- !u!212 &21200030
@@ -208,6 +208,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: breedingspeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InRPArea
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
