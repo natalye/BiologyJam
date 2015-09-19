@@ -21,6 +21,7 @@ public class PhagoButton : MonoBehaviour {
 		Vector2 position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
 		newPhagocyte = Instantiate(phagocytePrefab, position, Quaternion.identity) as GameObject;
 		newPhagocyte.name = "Phagocyte" + countPhago.ToString();
+		countPhago++;
 	}
 
 }
