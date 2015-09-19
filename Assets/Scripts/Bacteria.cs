@@ -31,7 +31,7 @@ public class Bacteria : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionStay2D (Collision2D col) {
+	void OnTriggerStay2D (Collider2D col) {
 		if (col.gameObject.tag == "ReproductionArea") {
 			breedingspeed=2.5f;
 			InRPArea=true;
@@ -39,7 +39,7 @@ public class Bacteria : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionExit2D (Collision2D col) {
+	void OnTriggerExit2D (Collider2D col) {
 		if (col.gameObject.tag == "ReproductionArea") {
 			breedingspeed=1;
 			InRPArea=false;

@@ -42,7 +42,33 @@ public class Phagocyte : MonoBehaviour {
 		hp = 100;
 		speed = 200;
 	}
-	
+
+	void OnTriggerStay2D (Collider2D col) {
+
+		if (!chosenTarget) {
+			if (col.gameObject.name == "ToxicRadius") {
+				Debug.Log("Detected Bacteria Close By...");
+				chosenTarget = true;
+				target = col.gameObject;
+			}
+		}
+		else {
+			if (col.gameObject.tag == "Bacteria") {
+				chosenTarget = false;
+				Debug.Log("Devoured Bacteria!!!");
+				hp -= 10;
+				Debug.Log ("Eating is hard.. Lost 10 HP. Curent HP = " + hp);
+				target = null;
+				col.gameObject.SetActive(false);
+				randomDirectionChosen = false;
+				if (hp <= 0) {
+					gameObject.SetActive(false);
+					Debug.Log ("Phagocyte is Dead");
+				}
+			}
+		}
+
+	}
 
 	void OnTriggerEnter2D (Collider2D col) {
 		Debug.Log("Collision!");
