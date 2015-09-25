@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class Bacteria : MonoBehaviour {
+    static private int BacteriaNum = 0;
+    static private int MaxBacterias = 50;
+
 	public GameObject BacteriaPrefab;
 	public int Hp { get; set; }
 	public	int Speed { get; set; }
@@ -18,7 +21,12 @@ public class Bacteria : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        BacteriaNum++;
+        if (BacteriaNum > MaxBacterias)
+        {
+            // GAME LOST
+            Application.LoadLevel("Menu");
+        }
 	}
 	
 	// Update is called once per frame
@@ -66,12 +74,25 @@ public class Bacteria : MonoBehaviour {
 	}
 
 	private void Reproduction() {
-		GameObject NewBacteria;
-		//Vector2 position = new Vector2 (900, 0);
-		Vector2 position = new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y);
-		NewBacteria = Instantiate (BacteriaPrefab, position, Quaternion.identity) as GameObject;
-		NewBacteria.name = "Bacteria";
-		if (InRPArea == true) {
-		}
-	}
+        GameObject NewBacteria;
+        //Vector2 position = new Vector2 (900, 0);
+        Vector2 position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+        NewBacteria = Instantiate(BacteriaPrefab, position, Quaternion.identity) as GameObject;
+        NewBacteria.name = "Bacteria";
+        if (InRPArea == true)
+        {
+        }
+ 	}
+
+    public void Kill()
+    {
+        BacteriaNum--;
+        if (BacteriaNum <= 0)
+        {
+            // GAME WON
+            Application.LoadLevel("Menu");
+        }
+
+        Destroy(this.gameObject);
+    }
 }

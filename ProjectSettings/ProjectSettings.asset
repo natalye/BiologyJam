@@ -10,14 +10,14 @@ PlayerSettings:
   targetResolution: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: BiologyJam
+  productName: Immunity
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
-  defaultScreenWidthWeb: 960
-  defaultScreenHeightWeb: 600
+  defaultScreenWidthWeb: 1920
+  defaultScreenHeightWeb: 1080
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   m_ActiveColorSpace: 0
@@ -92,6 +92,9 @@ PlayerSettings:
   APKExpansionFiles: 0
   preloadShaders: 0
   StripUnusedMeshComponents: 0
+  VertexChannelCompressionMask:
+    serializedVersion: 2
+    m_Bits: 238
   iPhoneSdkVersion: 988
   iPhoneTargetOSVersion: 22
   uIPrerenderedIcon: 0
@@ -193,6 +196,8 @@ PlayerSettings:
   ps4SaveDataImagePath: 
   ps4BGMPath: 
   ps4ShareFilePath: 
+  ps4ShareOverlayImagePath: 
+  ps4PrivacyGuardImagePath: 
   ps4NPtitleDatPath: 
   ps4RemotePlayKeyAssignment: -1
   ps4EnterButtonAssignment: 1
@@ -372,20 +377,24 @@ PlayerSettings:
   XboxOnePersistentLocalStorageSize: 0
   intPropertyNames:
   - Metro::ScriptingBackend
+  - Standalone::ScriptingBackend
   - WP8::ScriptingBackend
   - WebGL::ScriptingBackend
   - WebGL::audioCompressionFormat
   - WebGL::exceptionSupport
   - WebGL::memorySize
   - iOS::Architecture
+  - iOS::EnableIncrementalBuildSupportForIl2cpp
   - iOS::ScriptingBackend
   Metro::ScriptingBackend: 2
+  Standalone::ScriptingBackend: 0
   WP8::ScriptingBackend: 2
   WebGL::ScriptingBackend: 1
   WebGL::audioCompressionFormat: 4
   WebGL::exceptionSupport: 1
   WebGL::memorySize: 256
   iOS::Architecture: 2
+  iOS::EnableIncrementalBuildSupportForIl2cpp: 0
   iOS::ScriptingBackend: 1
   boolPropertyNames:
   - WebGL::analyzeBuildSize
@@ -399,8 +408,10 @@ PlayerSettings:
   stringPropertyNames:
   - WebGL::emscriptenArgs
   - WebGL::template
+  - additionalIl2CppArgs::additionalIl2CppArgs
   WebGL::emscriptenArgs: 
   WebGL::template: APPLICATION:Default
+  additionalIl2CppArgs::additionalIl2CppArgs: 
   firstStreamedSceneWithResources: 0
   cloudProjectId: 
   projectId: 

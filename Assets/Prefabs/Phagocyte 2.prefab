@@ -13,7 +13,7 @@ GameObject:
   - 60: {fileID: 6049480}
   - 114: {fileID: 11418192}
   m_Layer: 0
-  m_Name: Phagocyte
+  m_Name: Phagocyte 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: c9dc75bc43b00d84cbd7e8c2238c941c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5dc754373e9173c4eb34ad39420df016, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -121,7 +121,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c9dc75bc43b00d84cbd7e8c2238c941c,
+      objectReference: {fileID: 21300000, guid: 5dc754373e9173c4eb34ad39420df016,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_Constraints

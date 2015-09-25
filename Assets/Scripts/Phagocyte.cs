@@ -109,7 +109,7 @@ public class Phagocyte : MonoBehaviour {
 				hp -= 10;
 				Debug.Log ("Eating is hard.. Lost 10 HP. Curent HP = " + hp);
 				target = null;
-				col.gameObject.SetActive(false);
+                col.gameObject.GetComponent<Bacteria>().Kill();
 				randomDirectionChosen = false;
 				if (hp <= 0) {
 					gameObject.SetActive(false);

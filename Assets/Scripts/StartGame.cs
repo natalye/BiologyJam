@@ -4,13 +4,12 @@ using System.Collections;
 public class StartGame : MonoBehaviour {
 
 	public GameObject BacteriaPrefab;
+    public Vector2 FirstBacteriaPosition;
 
 	// Use this for initialization
 	void Start () {
 		GameObject FirstBacteria;
-		//Vector2 position = new Vector2 (900, 0);
-		Vector2 position = new Vector2 (-450, 100);
-		FirstBacteria = Instantiate (BacteriaPrefab, position, Quaternion.identity) as GameObject;
+        FirstBacteria = Instantiate(BacteriaPrefab, FirstBacteriaPosition, Quaternion.identity) as GameObject;
 		FirstBacteria.name = "Bacteria";
 	}
 	
